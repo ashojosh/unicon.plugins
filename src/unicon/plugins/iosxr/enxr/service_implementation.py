@@ -77,6 +77,8 @@ class Execute(BaseService):
         if not cmd or not self.connected:
             return
         try:
+            import pdb
+            pdb.set_trace()
             self._flush_connection()
             self.ssh.sendline(cmd)
             self.ssh.expect(self.prompt, timeout=10)
